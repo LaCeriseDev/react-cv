@@ -1,0 +1,68 @@
+h3 {
+  margin-bottom: 1rem;
+
+  font-size: 1.4rem;
+  font-family: $font-2;
+  color: $color-s;
+  text-transform: uppercase;
+}
+
+.skillsContent {
+    margin-left: 0px;
+
+    //width: 100%;
+    min-height: $min-height;
+
+    background: $color-b;
+
+    display: grid;
+    grid-template-rows: 75vh 25vh;
+    grid-template-areas: "topside", "botside";
+
+    & section.topside, & section.botside {
+      padding: .25rem;
+      padding-left: .5rem;
+    }
+
+    & section section:first-child { margin-right: .25rem; }
+    & section section:last-child { margin-left: .25rem; }
+
+    section.topside {
+      grid-area: "topside";
+
+      padding-top: 0;
+      padding-right: 0;
+
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+    }
+
+    section.botside {
+      grid-area: "botside";
+
+      padding-bottom: 0;
+      padding-right: 0;
+
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+    }
+
+
+}
+
+@media screen and (max-width: 850px) {
+    .knowledgesContent {
+      & section.topside, & section.botside { padding: 0; }
+    }
+}
+
+@media screen and (max-width: 750px) {
+
+
+}
+
+
+@import "./_otherSkills.scss";
+@import "./_languages.scss";
+@import "./_hobbies.scss";
+@import "./_experiences.scss";

@@ -1,0 +1,38 @@
+.worksContent {
+  width: 100%;
+  min-height: $min-height;
+
+  background: $color-surface;
+
+  display: grid;
+  grid-template-rows: 10vh 40vh 50vh;
+  grid-template-areas: "topside" "middle" "botside";
+
+  section {
+    padding: 1rem;
+  }
+
+  section:first-child {
+    grid-area: "topside";
+
+    border-bottom: .25rem solid $color-b;
+  }
+
+  section::nth-child(2) {
+    grid-area: "middle";
+
+    border-top: .25rem solid $color-b;
+    border-bottom: .25rem solid $color-b;
+  }
+
+  section:last-child {
+    grid-area: "botside";
+    border-top: .25rem solid $color-b;
+  }
+}
+
+
+@import "./_bid.scss";
+@import "./_newest.scss";
+@import "./_scrollsnap-y.scss";
+//@import "./_showcase.scss";

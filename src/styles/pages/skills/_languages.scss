@@ -1,0 +1,182 @@
+.languagesFrameworks::-webkit-scrollbar {
+  display: none;
+}
+
+.languagesFrameworks {
+
+  //overflow: auto;
+  //margin-bottom: .5rem;
+  //
+
+
+  //background: #222;
+
+  //border-right: .2rem solid rgba(#000000, 0.2);
+
+
+
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "L" "F";
+
+  .languagesDisplay,
+  .frameworksDisplay {
+    //padding: 1rem;
+    background: #333;
+  }
+
+  .languagesDisplay {
+    grid-area: L;
+
+    margin-bottom: .25rem;
+
+
+  }
+  .frameworksDisplay {
+    grid-area: F;
+
+    margin-top: .25rem;
+
+  }
+
+
+
+  .years {
+    display: flex;
+
+    font-size: .65rem;
+    justify-content: space-between;
+    color: $color-w;
+
+    span {
+      width: 0;
+
+      &:nth-child(2){
+        //width: 20%;
+        text-align: right;
+      }
+      &:nth-child(3){
+        //width: 40%;
+        text-align: center;
+      }
+      &:nth-child(4){
+        //width: 60%;
+        text-align: center;
+      }
+      &:nth-child(5){
+        //width: 80%;
+        text-align: center;
+      }
+      &:nth-child(6){
+        //width: 100%;
+        text-align: right;
+      }
+      &:nth-child(2):before,
+      &:nth-child(3):before,
+      &:nth-child(4):before,
+      &:nth-child(5):before,
+      &:nth-child(6):before{
+        position: absolute;
+        transform: translate(0px, 19px);
+
+        height: (33px*6);  // to resice height graduation
+        width: 1px;
+
+        @include background-opacity($color-s, 0.2);
+
+        content: '';
+      }
+    }
+  }
+  .languagesList {
+    padding-top: .5rem;
+
+    li {
+      color: $color-s;
+    }
+
+    .javascript { color: #E6E1AC; }
+    .css { color: #31A4D5; }
+    .php { color: #9FA1C6; }
+    .sql { color: #66B9FF; }
+    .sass { color: #D68FB1; }
+
+    .react { color: #ACD2E6; }
+    .vuejs { color: #8ED7B7; }
+    .meteor { color: #E48181; }
+    .bootstrap { color: #AD98CD; }
+    .laravel { color: #F07E75; }
+    .symfony { color: #B2B2B2; }
+    .mongoDB { color: #94D195; }
+
+    .progressBar {
+      position: relative;
+
+      //height: calc(100%/6);
+      height: 100%;
+      border-radius: .2rem;
+
+      background: transparent;
+
+      &.javascript:after { background-color: #E6E1AC; }
+      &.sass:after { background-color: #D68FB1; }
+      &.css:after { background-color: #31A4D5; }
+      &.php:after { background-color: #9FA1C6; }
+      &.sql:after { background-color: #66B9FF; }
+
+      &.react:after { background-color: #ACD2E6; }
+      &.vuejs:after { background-color: #8ED7B7; }
+      &.meteor:after { background-color: #E48181; }
+      &.bootstrap:after { background-color: #AD98CD; }
+      &.laravel:after { background-color: #F07E75; }
+      &.symfony:after { background-color: #B2B2B2; }
+      &.mongoDB:after { background-color: #94D195; }
+
+      &:after {
+        position: absolute;
+
+        height: .2rem;
+        width: 0;
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+
+        //background: $color-s;
+
+
+        animation: line .6s ease forwards;
+        //animation: lineb 7s step-end forwards;
+
+
+        content: '';
+
+        @keyframes line {
+          to {
+            width: 50%;
+          }
+        }
+        @keyframes lineb {
+          to {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+    /*
+    div.javascript { background-color: #E6E1AC; }
+    div.sass { background-color: #D68FB1; }
+    div.css { background-color: #31A4D5; }
+    div.php { background-color: #9FA1C6; }
+    div.sql { background-color: #66B9FF; }
+
+    div.react { background-color: #ACD2E6; }
+    div.vuejs { background-color: #8ED7B7; }
+    div.meteor { background-color: #E48181; }
+    div.bootstrap { background-color: #AD98CD; }
+    div.laravel { background-color: #F07E75; }
+    div.symfony { background-color: #B2B2B2; }
+    div.mongoDB { background-color: #94D195; }
+
+    */
+  }
+}

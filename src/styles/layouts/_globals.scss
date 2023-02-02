@@ -1,0 +1,21 @@
+body {
+margin: 0rem auto;
+background: $color-b;
+font-family: $font-2;
+color: $color-w;
+}
+
+.surface { padding: 1rem; background: $color-surface; }
+
+
+.home, .skills, .works, .contact {
+display: flex;
+
+@media screen and (max-width: 850px) { display: block !important; }
+}
+
+.homeContent, .skillsContent, .worksContent, .contactContent {
+margin-left: .4rem;
+
+@media screen and (max-width: 850px){ margin-left: 0 !important; }
+}

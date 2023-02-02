@@ -1,0 +1,25 @@
+.hobbies{
+
+  & div {
+    height: calc(100%/5);
+
+    border-bottom: .1rem solid $color-b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  & div:first-child {
+    display:block;
+    height: 25%;
+  }
+
+  & div:last-child {
+    border-bottom: 0;
+  }
+}

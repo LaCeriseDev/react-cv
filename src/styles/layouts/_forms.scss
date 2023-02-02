@@ -1,0 +1,30 @@
+form {
+  display: grid;
+
+
+  textarea, input {
+      padding: 1rem;
+      font-size: 1rem;
+      font-weight: bolder;
+  }
+
+  textarea {
+    &:hover {}
+    &:focus {}
+    &:valid {}
+    &:valid:focus {}
+    &:invalid {}
+    &:invalid:focus {}
+  }
+  input{
+
+    &:hover:not([type="submit"]) {}
+    &:focus:not([type="submit"]) {}
+    &:valid:not([type="submit"]) {}
+    &:valid:focus:not([type="submit"]) {}
+    &:invalid:not([type="submit"]) {}
+    &:invalid:focus:not([type="submit"]) {}
+    &[type="submit"] {}
+    &:required {}
+  }
+}

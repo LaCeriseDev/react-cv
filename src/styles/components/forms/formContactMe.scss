@@ -1,0 +1,42 @@
+.formContact {
+  padding: 3rem;
+  padding-top: 10rem;
+  width: 80%;
+  @include boxCenter("col","left","top");
+
+  .contactme {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 15px 15px;
+    grid-template-areas:
+      "name name name name"
+      "email email tel tel"
+      "subject subject subject subject"
+      "message message message message"
+      "message message message message"
+      ".  . submit submit";
+
+    .name { grid-area: name; }
+    .last-name { grid-area: last-name; }
+    .email { grid-area: email; }
+    .tel { grid-area: tel; }
+    .message { grid-area: message; }
+    .submit { grid-area: submit; }
+    .subject { grid-area: subject; }
+
+    textarea, input {
+
+      font-size: 1rem;
+      font-weight: bolder;
+      font-family: $font-2;
+      border-bottom-width: .3rem;
+      border-bottom-style: solid;
+
+      background: $color-s;
+      color: $color-w;
+      border-color: $color-p;
+    }
+
+  }
+}

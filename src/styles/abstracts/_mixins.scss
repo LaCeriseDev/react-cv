@@ -1,0 +1,27 @@
+@mixin verticalCenter { // center in box
+  display: flex;
+  justify-content: center;
+  align-item: center;
+}
+
+@mixin background-opacity($color, $opacity: 0.3) { // opacty for background
+    background: $color; /* The Fallback */
+    background: rgba($color, $opacity);
+}
+
+@mixin color-opacity($color, $opacity: 0.3) { // opacty for text color
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
+
+
+@mixin boxCenter($direction ,$horizontal , $vertical) {
+  display: flex;
+  @if $direction == "col" { flex-direction: column;} @else if $direction == "row" { flex-direction: row;}
+  @if $horizontal == "left" { align-items: flex-start; }
+    @else if $horizontal == "right" { align-items: flex-end; }
+    @else if $horizontal == "center" { align-items: center; }
+  @if $vertical == "top" { justify-content: flex-start; }
+    @else if $vertical == "bot" { justify-content: flex-end; }
+    @else if $vertical == "center" {justify-content: center; }
+}

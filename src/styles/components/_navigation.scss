@@ -1,0 +1,252 @@
+
+.sidebar {
+  display: grid;
+  grid-template-rows: 250px 1fr 100px 40px;
+  grid-template-areas: "1" "2" "3" "4";
+
+  min-height: $min-height;
+  min-width: 264px;
+  border-radius: $border-radius;
+
+  background-color: #2f2f2f;
+
+  font-family: $font-1;
+
+//--------------------GRID 1---
+  .id {
+    grid-area: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    figcaption {
+
+      text-align: center;
+      margin-top: 1.5rem;
+
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.2rem;
+      color: $color-s;
+    }
+    border-bottom: .3rem solid $color-b;
+  }
+//--------------------GRID 2---
+  .navigation {
+    grid-area: 2;
+
+    ul {
+      display: grid;
+
+      height: 100%;
+      width: 100%;
+
+/*
+      .navActive {
+        display: none;
+      }
+*/
+
+      .navActive {
+        & li {
+            color: $color-s;
+            background: darken($color-p, 10%);
+            border-right: 1rem solid darken($color-p, 10%);
+          }
+
+        & li:hover {
+            color: $color-s;
+            background: darken($color-p, 10%);
+            border-right: 1rem solid darken($color-p, 10%);
+          }
+      }
+
+      a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-right: 0;
+
+          height: 100%;
+          width: 100%;
+
+          border-bottom: .3rem solid $color-b;
+
+
+          li {
+            width: 100%;
+            height: 100%;
+
+            background-color: $color-p;
+            border-right: 1rem solid $color-p;
+
+            font-size: 1.4rem;
+            font-weight: bolder;
+
+            transition: .1s cubic-bezier(.13,.89,.38,.65);
+
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            //gap: 10px;
+
+            & i {
+                display: none;
+            }
+
+            &:hover,
+            &:focus {
+              background: darken($color-p, 10%);
+              border-right: 1rem solid $color-s;
+            }
+          }
+
+
+        }
+        a:visited { color: $color-w;}
+      }
+    }
+//--------------------GRID 3---
+  .socialNetwork {
+    grid-area: 3;
+    margin-top: 30px;
+    ul {
+      display: flex;
+      width: 264px;
+      padding: 0 14px;
+      justify-content: space-around;
+    li {
+      font-size: 1.5rem;
+
+      background-color: $color-s;
+
+      //color: $color-p;
+      border-radius: 50%;
+      padding: 0.8rem 0.8rem;
+      transition: 0.3s;
+      cursor: pointer;
+
+      color: green;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+          @include color-opacity($color-b,0.7);
+        }
+      }
+
+      &:hover {
+        //@include background-opacity($color: )
+
+        background: $color-s;
+      }
+
+      a:visited {
+        color: $color-p;
+      }
+    }
+  }
+}
+//--------------------GRID 4---
+  .signature {
+    text-align: center;
+
+    letter-spacing: 0.1rem;
+    font-size: 0.7rem;
+
+    p {
+      color: $color-s;
+    }
+    &:hover {
+      color: $color-s;
+    }
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .sidebar {
+    display: flex;
+    min-height: 80px;
+    max-height: 80px;
+    width: 100%;
+
+    .id,
+    .socialNetwork,
+    .signature {
+      display: none;
+    }
+    .navigation {
+      width: 100%;
+
+      ul {
+        display: flex;
+        justify-content: space-between;
+
+        .navActive {
+          & li {
+            border-right: 0;
+
+            color: $color-s;
+            background: darken($color-p, 10%);
+            border-bottom: 1rem solid darken($color-p, 10%);
+          }
+
+          & li:hover {
+            border-right: 0;
+
+            color: $color-s;
+            background: darken($color-p, 10%);
+            border-bottom: 1rem solid darken($color-p, 10%);
+          }
+        }
+
+        a {
+          border-bottom: 0;
+          border-right: .3rem solid $color-b;
+
+          &:first-child {
+            border-top: 0;
+          }
+
+          &:last-child {
+            border-right: 0;
+          }
+
+
+          li{
+            padding-top: 1.8rem;
+            padding-bottom: .6rem;
+            border-right: 0;
+            border-bottom: 1rem solid $color-p;
+
+            &:hover,
+            &:focus {
+              background: darken($color-p, 10%);
+              border-right: 0;
+              border-bottom: 1rem solid $color-s;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .sidebar .navigation ul { justify-content: space-around !important; }
+  .sidebar .navigation ul a li {
+      i {
+        display: contents;
+        font-size: 1.4rem !important;
+        transform: translateY(-3px) !important;
+      }
+      span { display: none; }
+  }
+}
