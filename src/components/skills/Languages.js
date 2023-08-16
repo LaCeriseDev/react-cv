@@ -21,8 +21,6 @@ class Languages extends React.Component {
     ]
   }
 
-  static propTypes = {};
-  static defaultProps = {};
 
   render() {
     let {languages, frameworks} = this.state;
